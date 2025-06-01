@@ -25,7 +25,7 @@ const Navigation = ({ cartItemsCount, onCartClick }: NavigationProps) => {
             <a href="/" className="text-gray-700 hover:text-orange-500 transition-colors font-medium">
               Home
             </a>
-            <a href="#products" className="text-gray-700 hover:text-orange-500 transition-colors font-medium">
+            <a href="#products" className="text-gray-700 hover:text-orange-500 transition-colors font-medium"> 
               Accessories
             </a>
             <a href="/repair-services" className="text-gray-700 hover:text-orange-500 transition-colors font-medium">
@@ -38,7 +38,46 @@ const Navigation = ({ cartItemsCount, onCartClick }: NavigationProps) => {
               <Settings className="h-4 w-4" />
               <span>Admin</span>
             </a>
+            {/* New Login & Signup links */}
+            <a href="/login" className="text-gray-700 hover:text-orange-500 transition-colors font-medium">
+              Login
+            </a>
+            <a href="/signup" className="text-gray-700 hover:text-orange-500 transition-colors font-medium">
+              Sign Up
+            </a>
           </div>
+
+          {/* Mobile Navigation */}
+          {isMenuOpen && (
+            <div className="md:hidden py-4 animate-fade-in border-t border-orange-200">
+              <div className="flex flex-col space-y-4">
+                <a href="/" className="text-gray-700 hover:text-orange-500 transition-colors font-medium">
+                  Home
+                </a>
+                <a href="#products" className="text-gray-700 hover:text-orange-500 transition-colors font-medium">
+                  Accessories
+                </a>
+                <a href="/repair-services" className="text-gray-700 hover:text-orange-500 transition-colors font-medium">
+                  Repair Services
+                </a>
+                <a href="/contact" className="text-gray-700 hover:text-orange-500 transition-colors font-medium">
+                  Contact
+                </a>
+                <a href="/admin" className="text-gray-700 hover:text-orange-500 transition-colors font-medium flex items-center space-x-1">
+                  <Settings className="h-4 w-4" />
+                  <span>Admin</span>
+                </a>
+                {/* New Login & Signup links */}
+                <a href="/login" className="text-gray-700 hover:text-orange-500 transition-colors font-medium">
+                  Login
+                </a>
+                <a href="/signup" className="text-gray-700 hover:text-orange-500 transition-colors font-medium">
+                  Sign Up
+                </a>
+              </div>
+            </div>
+          )}
+
 
           {/* Cart and Mobile Menu */}
           <div className="flex items-center space-x-4">
