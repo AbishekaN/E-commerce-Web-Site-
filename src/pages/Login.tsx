@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { supabase } from "@/lib/supabaseClient";
 import { Mail, Lock } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -8,17 +9,16 @@ const Login = () => {
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
+  const navigate = useNavigate();
+
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     setError(null);
 
-    const { data, error } = await supabase.auth.signUp({
+    const { data, error } = await supabase.auth.signInWithPassword({
       email,
       password,
-      options: {
-        data: { full_name: name }
-      }
     });
 
     setLoading(false);
@@ -26,8 +26,8 @@ const Login = () => {
     if (error) {
       setError(error.message);
     } else {
-      alert("Logged in successfully!");
-      // TODO: Redirect or update app state
+      // Redirect to dashboard on successful login
+      navigate("/"); 
     }
   };
 
