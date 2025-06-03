@@ -124,4 +124,5 @@ const FeaturedProducts = ({ onProductClick, onAddToCart }: FeaturedProductsProps
   );
 };
 
+
 export default FeaturedProducts;
