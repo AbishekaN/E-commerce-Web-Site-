@@ -1,4 +1,4 @@
-
+import { Link } from 'react-router-dom';
 import { ArrowRight, Shield, Smartphone, Zap } from 'lucide-react';
 
 const Hero = () => {
@@ -25,13 +25,18 @@ const Hero = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-gradient-to-r from-orange-500 to-yellow-500 text-white px-8 py-4 rounded-lg font-bold hover:from-orange-600 hover:to-yellow-600 transition-all hover:scale-105 flex items-center justify-center space-x-2">
-                <span>Shop Accessories</span>
-                <ArrowRight className="h-5 w-5" />
-              </button>
-              <button className="border-2 border-orange-500 text-orange-600 px-8 py-4 rounded-lg font-semibold hover:bg-orange-500 hover:text-white transition-all">
-                Book Repair
-              </button>
+              <Link to="/accessories">
+                <button className="bg-gradient-to-r from-orange-500 to-yellow-500 text-white px-8 py-4 rounded-lg font-bold hover:from-orange-600 hover:to-yellow-600 transition-all hover:scale-105 flex items-center justify-center space-x-2">
+                  <span>Shop Accessories</span>
+                  <ArrowRight className="h-5 w-5" />
+                </button>
+              </Link>
+
+              <Link to="/repair-services">
+                <button className="border-2 border-orange-500 text-orange-600 px-8 py-4 rounded-lg font-semibold hover:bg-orange-500 hover:text-white transition-all">
+                  Book Repair
+                </button>
+              </Link>
             </div>
             
             <div className="flex items-center space-x-8 pt-4">
